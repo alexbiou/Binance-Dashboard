@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 10% 8%;
+    --card: 210 11% 11%;
+    --card-foreground: 214 14% 87%;
+    --secondary: 210 11% 14%;
+    --muted: 210 11% 14%;
+    --accent: 210 11% 16%;
+    --border: 210 11% 17%;
+    --input: 210 11% 19%;
+    --foreground: 214 14% 87%;
+    --muted-foreground: 212 8% 60%;
+    --dim: 212 8% 42%;
+    --primary: 214 33% 63%;
+    --primary-foreground: 210 10% 8%;
+    --ring: 214 33% 63%;
+    --up: 158 52% 48%;
+    --down: 3 70% 62%;
+    --warn: 41 54% 55%;
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans text-[13px] leading-5 antialiased;
+    font-feature-settings: "tnum" 1, "zero" 0;
+    overflow-x: hidden;
+  }
+
+  /* Ensure no element can cause horizontal overflow beyond the viewport */
+  * {
+    box-sizing: border-box;
+  }
+
+  #__next {
+    isolation: isolate;
+    min-height: 100%;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-1 ring-ring;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin {
+    animation: none;
+  }
+}
